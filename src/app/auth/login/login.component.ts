@@ -44,8 +44,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         .loginUser(loginData)
         .pipe(takeUntil(this.destroy$))
         .subscribe((res) => {
-          if (res.token) {
-            localStorage.setItem('token', res.token);
+          if (res?.token) {
+            localStorage.setItem('token', res?.token);
             this._route.navigate(['/profile']);
           }
         });
