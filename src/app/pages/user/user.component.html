@@ -1,0 +1,36 @@
+<div class="table-card">
+   <div class="heading">
+      <h2>User Table</h2>
+      <input type="text" class="inp-search" [(ngModel)]="search" (ngModelChange)="searchChange($event)"
+         placeholder="Search By Name">
+
+   </div>
+   <hr />
+   <table>
+      <thead>
+         <tr class="tr-head">
+            <th *ngFor="let item of tableHeader">{{item}}</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let user of orgUserList">
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.gender }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.birthDate }}</td>
+            <td>
+               <figure class="pro_img">
+                  <img width="100%" [src]="user.image" alt="">
+               </figure>
+            </td>
+            <td>
+               <button class="btn-edit">Edit</button>
+            </td>
+            <td>View Details</td>
+         </tr>
+      </tbody>
+   </table>
+</div>

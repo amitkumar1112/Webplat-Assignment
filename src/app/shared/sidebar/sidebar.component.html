@@ -1,0 +1,36 @@
+<div class="layout">
+
+   <aside class="sidebar">
+      <div class="logo">
+         <figure>
+            <img width="100%" src="assets/images/logo.png" alt="">
+         </figure>
+      </div>
+      <div class="mid-sidebar">
+
+         <div class="top-one">
+            <ul>
+               <li *ngFor="let item of sidebarArray" [routerLink]="item.url" routerLinkActive="active">{{ item.label }}
+               </li>
+            </ul>
+         </div>
+         <div class="bottom">
+            <ul>
+               <li *ngFor="let item of settingBar" [routerLink]="item.url" routerLinkActive="active"
+                  (click)="navigate(item.label)">
+                  <div class="sidebar-content">
+                     <figure>
+                        <img [src]="item.icon" alt="">
+                     </figure>
+                     <span>{{ item.label }}</span>
+                  </div>
+
+               </li>
+            </ul>
+
+         </div>
+      </div>
+
+
+   </aside>
+</div>

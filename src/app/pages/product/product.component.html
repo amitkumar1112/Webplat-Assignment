@@ -1,0 +1,37 @@
+<div class="table-card">
+   <div class="heading">
+      <h2>Product Table</h2>
+      <button class="btn-sort" (click)="sortByPrice()">Sort By Price</button>
+
+   </div>
+   <hr />
+   <table>
+      <thead>
+         <tr class="tr-head">
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price(USD)</th>
+            <th>Image</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let product of productList">
+            <td>{{ product.id }}</td>
+            <td>{{ product.title }}</td>
+            <td>{{ product.description.length>=100? product.description.slice(0,100)+'...'+'View More'
+               :product.description
+               }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+               <figure class="pro_img">
+                  <img width="100%" [src]="product.images[0]" alt="">
+               </figure>
+            </td>
+
+         </tr>
+      </tbody>
+   </table>
+</div>
